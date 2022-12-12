@@ -1,0 +1,24 @@
+<h1>確認画面</h1>
+<%= form_with(model: @feed, url: feeds_path, local: true) do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>
+    
+    <p>タイトル:<%= @feed.title %></p>
+    <p>内容:<%= @feed.content %></p>
+    <% if @feed.image_url %>
+    <%= form.hidden_field :image %>
+    <p>写真:<%= image_tag @feed.image.url || default_image%></p>
+   
+    <% end %>
+
+  <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "投稿する" %>
+
+
+  <%= form.hidden_field :image_cache %>
+  <%= form.submit "戻る", name: "back" %>
+
+
+<% end %>
+

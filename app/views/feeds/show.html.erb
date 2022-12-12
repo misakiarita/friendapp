@@ -2,7 +2,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= image_tag @feed.image.url %>
+  <% if @feed.image_url %>
+  <%= image_tag @feed.image.url || default_image%>
+  <% end %>
 </p>
 
 <p>

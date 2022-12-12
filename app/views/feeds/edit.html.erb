@@ -1,6 +1,7 @@
 <h1>Editing Feed</h1>
 
-<%= render 'form', feed: @feed %>
-
-<%= link_to 'Show', @feed %> |
-<%= link_to 'Back', feeds_path %>
+<%= form_with(model: @feed, local: true) do |form| %>
+    <%= render 'form', feed: @feed %>
+    <%= link_to 'Show', @feed %> |
+    <%= link_to 'Back', feeds_path %>
+  <% end %>
