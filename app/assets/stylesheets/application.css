@@ -4,7 +4,9 @@ body {
     color: rgb(4, 11, 72);
     margin: 33px; }
 
-    table {margin: auto;}
+table {margin: auto;}
+
+ul {list-style: none;}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
