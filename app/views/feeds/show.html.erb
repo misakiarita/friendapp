@@ -1,21 +1,17 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Image:</strong>
   <% if @feed.image_url %>
-  <%= image_tag @feed.image.url || default_image%>
+    <%= image_tag @feed.image.url || default_image%>
   <% end %>
 </p>
-
 <p>
   <strong>Title:</strong>
   <%= @feed.title %>
 </p>
-
 <p>
   <strong>Content:</strong>
   <%= @feed.content %>
 </p>
-
 <%= link_to 'Edit', edit_feed_path(@feed) %> |
 <%= link_to 'Back', feeds_path %>
