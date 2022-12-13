@@ -5,18 +5,14 @@
     
     <p>タイトル:<%= @feed.title %></p>
     <p>内容:<%= @feed.content %></p>
-    <% if @feed.image_url %>
-    <%= form.hidden_field :image %>
-    <p>写真:<%= image_tag @feed.image.url || default_image%></p>
    
-    <% end %>
 
   <%= image_tag(@feed.image.url) if @feed.image && @feed.image.url %>
   <%= form.hidden_field :image_cache %>
   <%= form.submit "投稿する" %>
 
 
-  <%= form.hidden_field :image_cache %>
+ 
   <%= form.submit "戻る", name: "back" %>
 
 
