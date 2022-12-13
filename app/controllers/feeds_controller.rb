@@ -20,6 +20,7 @@ class FeedsController < ApplicationController
   end
 
   def confirm
+    # @feed = Feed.new(feed_params)
     @feed = current_user.feeds.build(feed_params)
     render :new if @feed.invalid?
   end
@@ -62,25 +63,25 @@ class FeedsController < ApplicationController
   # end
 
   # PATCH/PUT /feeds/1 or /feeds/1.json
-#   def update
-#     @feed = Feed.find(params[:id])
-#     if @feed.update(feed_params)
-#         redirect_to feed_path, notice: "Your feed was edited!"
-#     else
-#         render :edit
-#     end
-# end
   def update
-    respond_to do |format|
-      if @feed.update(params[:id])
-        format.html { redirect_to feed_path, notice: "Feed was successfully updated." }
-        format.json { render :show, status: :ok, location: @feed }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @feed.errors, status: :unprocessable_entity }
-      end
+    # @feed = Feed.find(params[:id])
+    if @feed.update(feed_params)
+        redirect_to feeds_path, notice: "Your feed was edited!"
+    else
+        render :edit
     end
-  end
+end
+  # def update
+  #   respond_to do |format|
+  #     if @feed.update(params[:id])
+  #       format.html { redirect_to feeds_url, notice: "Feed was successfully updated." }
+  #       format.json { render :show, status: :ok, location: @feed }
+  #     else
+  #       format.html { render :edit, status: :unprocessable_entity }
+  #       format.json { render json: @feed.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /feeds/1 or /feeds/1.json
   def destroy
