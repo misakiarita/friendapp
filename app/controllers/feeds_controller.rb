@@ -46,22 +46,6 @@ class FeedsController < ApplicationController
     end
   end
 
-  
-  # def create
-    
-  #   @feed = Feed.new(params[:id])
-
-  #   respond_to do |format|
-  #     if @feed.save
-  #       format.html { redirect_to feed_url(@feed), notice: "Feed was successfully created." }
-  #       format.json { render :show, status: :created, location: @feed }
-  #     else
-  #       format.html { render :new, status: :unprocessable_entity }
-  #       format.json { render json: @feed.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
   # PATCH/PUT /feeds/1 or /feeds/1.json
   def update
     # @feed = Feed.find(params[:id])
@@ -71,18 +55,7 @@ class FeedsController < ApplicationController
         render :edit
     end
 end
-  # def update
-  #   respond_to do |format|
-  #     if @feed.update(params[:id])
-  #       format.html { redirect_to feeds_url, notice: "Feed was successfully updated." }
-  #       format.json { render :show, status: :ok, location: @feed }
-  #     else
-  #       format.html { render :edit, status: :unprocessable_entity }
-  #       format.json { render json: @feed.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
-
+  
   # DELETE /feeds/1 or /feeds/1.json
   def destroy
     @feed.destroy
